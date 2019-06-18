@@ -3,10 +3,25 @@
 
 <!-- 设置为IStudentDao接口方法提供sql语句配置 -->
 <mapper namespace="com.chen.dao.IStudentDao">
+    <!--    添加学生-->
+    <insert id="addStudent" parameterType="com.chen.entity.Student">
+        insert into t_student(stu_name, stu_age)
+        VALUES (#{name}, #{age})
+    </insert>
+    <!--    根据id查询学生-->
     <select id="findStudentById" resultType="com.chen.entity.Student">
         select stu_id as id, stu_name as name, stu_age as age
         from t_student
         where stu_id = #{id};
     </select>
+    <select id="findStudents" resultMap="stuMap">
+        select stu_id, stu_name, stu_age
+        from t_student;
+    </select>
+    <resultMap id="stuMap" type="com.chen.entity.Student">
+        <id property="id" column="stu_id"/>
+        <result property="name" column="stu_name"/>
+        <result property="age" column="stu_age"/>
+    </resultMap>
 
 </mapper>

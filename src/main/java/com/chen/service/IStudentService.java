@@ -2,6 +2,8 @@ package com.chen.service;
 
 import com.chen.entity.Student;
 
+import java.util.List;
+
 /**
  * @author chenyam
  * @title: IStudentService
@@ -19,4 +21,13 @@ public interface IStudentService {
      * @Date: 2019/6/17 11:44
      */
     Student getStudentById(int id);
+
+    /**
+     * 功能描述: 查询所有学生
+     *
+     * @return: java.util.List<com.chen.entity.Student>
+     * @Author: chenyam
+     * @Date: 2019/6/17 15:51
+     */
+    List<Student> getStudents();
 }

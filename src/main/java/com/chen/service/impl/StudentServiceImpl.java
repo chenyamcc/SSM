@@ -5,6 +5,8 @@ import com.chen.entity.Student;
 import com.chen.service.IStudentService;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 
 /**
  * @author chenyam
@@ -24,5 +26,9 @@ public class StudentServiceImpl implements IStudentService {
 
     public Student getStudentById(int id) {
         return studentDao.findStudentById(id);
+    }
+
+    public List<Student> getStudents() {
+        return studentDao.findStudents();
     }
 }

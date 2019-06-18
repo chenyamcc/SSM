@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.List;
+
 /**
  * @author chenyam
  * @title: StudentHandler
@@ -27,5 +29,11 @@ public class StudentHandler {
     @ResponseBody
     public Student getStudentById(@PathVariable int id) {
         return studentService.getStudentById(id);
+    }
+
+    @RequestMapping(value = "/student", method = RequestMethod.GET)
+    @ResponseBody
+    public List<Student> getStudents() {
+        return studentService.getStudents();
     }
 }

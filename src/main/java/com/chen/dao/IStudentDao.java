@@ -3,6 +3,8 @@ package com.chen.dao;
 import com.chen.entity.Student;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 /**
  * @author chenyam
  * @title: IStudentDao
@@ -21,4 +23,23 @@ public interface IStudentDao {
      * @Date: 2019/6/17 11:29
      */
     Student findStudentById(int id);
+
+    /**
+     * 功能描述: 查询所有学生
+     *
+     * @return: java.util.List<com.chen.entity.Student>
+     * @Author: chenyam
+     * @Date: 2019/6/17 15:43
+     */
+    List<Student> findStudents();
+
+    /**
+     * 功能描述:添加学生
+     *
+     * @param student 学生
+     * @return: void
+     * @Author: chenyam
+     * @Date: 2019/6/17 15:53
+     */
+    void addStudent(Student student);
 }
